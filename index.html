@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Do you love me?</title>
+
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 80px;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #fff;
+    }
+
+    img {
+      width: 200px;
+      margin: 20px;
+      border-radius: 10px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      font-size: 18px;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yes {
+      background-color: #28a745;
+      color: white;
+    }
+
+    #yes:hover {
+      transform: scale(1.1);
+    }
+
+    #no {
+      background-color: #dc3545;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Do you love me? 🥺</h1>
+
+  <!-- Cute GIF -->
+  <img src="https://media.tenor.com/2roX3uxz_68AAAAC/cute-bear.gif" alt="cute">
+
+  <br>
+
+  <button id="yes" class="btn" onclick="love()">Yes 💖</button>
+  <button id="no" class="btn">No 😢</button>
+
+  <!-- Optional music -->
+  <audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const music = document.getElementById("music");
+
+    // Make "No" button run away
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    // When YES is clicked
+    function love() {
+      music.play();
+
+      document.body.innerHTML = `
+        <h1>I knew it 😭💖</h1>
+        <img src="https://media.tenor.com/6XbRr6n6bW0AAAAC/love-cute.gif">
+        <h2>You can't escape love 😌✨</h2>
+      `;
+    }
+  </script>
+
+</body>
+</html>
